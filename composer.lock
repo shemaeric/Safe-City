@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
+    "content-hash": "1bb43e36f572a6df14d1d16103300cb8",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -458,6 +458,50 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "kblais/laravel-uuid",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kblais/laravel-uuid.git",
+                "reference": "65d897109afd1eecf9ca20a18b67d45a9cff70ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kblais/laravel-uuid/zipball/65d897109afd1eecf9ca20a18b67d45a9cff70ce",
+                "reference": "65d897109afd1eecf9ca20a18b67d45a9cff70ce",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.0",
+                "php": ">=5.4",
+                "ramsey/uuid": "^3.4"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.4",
+                "orchestra/testbench": "~3.4",
+                "phpunit/phpunit": "^4.0",
+                "squizlabs/php_codesniffer": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kblais\\Uuid\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Killian Blais",
+                    "email": "contact@killianblais.fr"
+                }
+            ],
+            "description": "A simple library to use UUIDs as your Eloquent model's primary key.",
+            "time": "2017-10-05T16:56:23+00:00"
         },
         {
             "name": "laravel/framework",
