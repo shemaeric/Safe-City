@@ -1,0 +1,23 @@
+#mn-section {
+  background: linear-gradient(45deg, #42A5F5,#1976D2);
+}
+.nav-justified {
+  width: 100%;
+  border-bottom: 0; }
+  .nav-justified .nav-item {
+    float: none; }
+  .nav-justified .nav-link {
+    text-align: center;
+    margin-bottom: 5px; }
+  .nav-justified > .dropdown .dropdown-menu {
+    top: auto;
+    left: auto; }
+  @media (min-width: 544px) {
+    .nav-justified .nav-item {
+      display: table-cell;
+      width: 1%; }
+    .nav-justified .nav-link {
+      margin-bottom: 0; } }
+  .nav-justified .nav-link {
+    margin-right: 0;
+    border-radius: 0.25rem; }
