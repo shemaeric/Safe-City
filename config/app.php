@@ -44,7 +44,6 @@ return [
 
     // setup of error handling on heroku
     'log'=>'errorlog',
-
     /*
     |--------------------------------------------------------------------------
     | Application URL
