@@ -41,6 +41,10 @@ return [
 
     'debug' => env('APP_DEBUG', false),
 
+
+    // setup of error handling on heroku
+    'log'=>'errorlog'
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
