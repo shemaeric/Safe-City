@@ -10239,6 +10239,16 @@ body.fixed-header .header {
   border-radius: 50%;
 }
 
+.side-unread {
+  position: absolute;
+  top: .75rem;
+  right: 2.2rem;
+  background: #cd201f;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+}
+
 .navbar-brand {
   color: inherit;
   margin-right: 1rem;

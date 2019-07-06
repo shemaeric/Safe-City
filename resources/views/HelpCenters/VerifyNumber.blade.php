@@ -15,7 +15,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2018-04-04 18:58:30 +0200 -->
-    <title>Login - tabler.github.io - a responsive, flat and full featured admin template</title>
+    <title>Verify - Safe City</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="{{asset('assets/js/require.min.js')}}"></script>
@@ -25,24 +25,16 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="./assets/css/dashboard.css" rel="stylesheet" />
-    <script src="./assets/js/dashboard.js"></script>
-    <!-- c3.js Charts Plugin -->
-    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/charts-c3/plugin.js"></script>
-    <!-- Google Maps Plugin -->
-    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/maps-google/plugin.js"></script>
-    <!-- Input Mask Plugin -->
-    <script src="./assets/plugins/input-mask/plugin.js"></script>
+    <link href="{{asset('assets/css/dashboard.css')}}" rel="stylesheet" />
+    <script src="{{asset('assets/js/dashboard.js')}}"></script>
 </head>
 <body class="">
 <div class="page">
     <div class="page-main">
-        <div class="header">
-            <div class="container">
+        <div class="header" style="background-color: #014461">
+            <div class="container-fluid">
                 <div class="d-flex">
-                    <a class="navbar-brand" href="./index.html">
+                    <a class="navbar-brand mr-auto text-light" href="./index.html">
                         Safe City
                     </a>
                 </div>
@@ -85,7 +77,7 @@
                             </div>
                                 <input type="hidden" name="id" value="{{old('id', session()->get('id'))}}">
                             <div class="form-footer">
-                                <button type="submit" class="btn btn-primary btn-block">Verify</button>
+                                <button type="submit" class="btn btn-block " style="background:#256589;color:#fff;">Verify</button>
                             </div>
                         </div>
                     </form>

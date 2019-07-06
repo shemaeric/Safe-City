@@ -13,7 +13,6 @@
 
 Route::get('/', 'HelpCentersController@index');
 Route::post('/signup', 'RegisterUser@store');
-
 Route::get('/verify','VerifyController@getVerify')->name('getVerify');
 Route::post('/verify-account', 'VerifyController@postVerify')->name('postVerify');
 Route::get('/login','LoginController@show');
@@ -29,4 +28,6 @@ Route::group(['middleware' => ['isAuthorised']], function () {
     Route::get('/logout','LoginController@logout');
     Route::get('/manage','HelpCentersController@show');
     Route::get('/activate/{id}','HelpCentersController@activate');
+    Route::get('/blocked/{id}','HelpCentersController@blocked');
+
 });

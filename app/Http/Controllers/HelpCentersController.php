@@ -12,14 +12,28 @@ class HelpCentersController extends Controller
         return view('HelpCenters.register');
     }
     public function show(){
-        $user = User::where('is_admin','!=','admin')->where('active','=',0)->get();
-        return view('HelpCenters.manageUsers')->with('user',$user);
+        $notActive = User::where('is_admin','!=','admin')->where('active','=','0')->get();
+        $active = User::where('is_admin','!=','admin')->where('active','=','1')->get();
+        $isBlocked = User::where('is_admin','!=','admin')->where('active','=','1')->get();
+        return view('HelpCenters.manageUsers')->with('notActive',$notActive)->with('active',$active)->with('isBlocked',$isBlocked);
     }
     public function activate($id){
         $user = User::find($id);
         $user->active = 1;
         $user->save();
         return redirect()->back()->with(['message'=>'User has been activated']);
+    }
+    public function blocked($id){
+        $user = User::find($id);
+        if($user->is_blocked == 1) {
+            $user->is_blocked = 0;
+        }
+        else{
+            $user->is_blocked = 1;
+        }
+        $user->save();
+
+        return redirect()->back();
     }
     public function store(Request $request){
         $validate = \Validator::make($request->all(), [
