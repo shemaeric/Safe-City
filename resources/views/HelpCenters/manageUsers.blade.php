@@ -66,7 +66,7 @@
                                                             <td>{{$notActive->phone_number}}</td>
                                                             <td>{{$notActive->email}}</td>
                                                             <td>{{$notActive->address}}</td>
-                                                            <td><a href="{{url('/activate/')}}" class="btn btn-success btn-sm">Activate</a></td>
+                                                            <td><a href="{{url('/activate/'.$notActive->id)}}" class="btn btn-success btn-sm">Activate</a></td>
                                                         </tr>
                                                 @endforeach
                                                 </tbody>

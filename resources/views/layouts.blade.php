@@ -28,14 +28,6 @@
     <!-- Dashboard Core -->
     <link href="./assets/css/dashboard.css" rel="stylesheet" />
     <script src="./assets/js/dashboard.js"></script>
-    <!-- c3.js Charts Plugin -->
-    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/charts-c3/plugin.js"></script>
-    <!-- Google Maps Plugin -->
-    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/maps-google/plugin.js"></script>
-    <!-- Input Mask Plugin -->
-    <script src="./assets/plugins/input-mask/plugin.js"></script>
     <style type="text/css">
         ul li{
             display: block;
@@ -190,34 +182,42 @@
             <div class="col-lg-1 col-md-2 text-center">
                 <nav class="sidebar-nav h-100" style="background-color: #014461!important">
                     <ul class="metismenu" id="menu2">
-                        <li>
-                            <a class="has-arrow" href="#">
+                        <li id="urgent">
+                            <a class="has-arrow" href="{{url('urgent')}}">
+                                <span class="fa fa-fw fa-github fa-lg"></span>
+                                <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">2</span></br>
+                                Urgent
+                            </a>
+                        </li>
+                        <li id="accidents">
+                            <a class="has-arrow" href="{{url('accidents')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span>
                                 <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">2</span>
                                 Accidents
                             </a>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="#">
+                        <li id="fire">
+                            <a class="has-arrow" href="{{url('/fire')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span><br />
                                 <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">5</span>
                                 Fire
                             </a>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="#">
+                        <li id="abuse">
+                            <a class="has-arrow" href="{{url('abuse')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span><br />
                                 <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">2</span>
                                 Abuse
                             </a>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="#">
-                                <span class="fa fa-fw fa-github fa-lg"></span><br />
-                                <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">8</span>
-                                Users
-                            </a>
-                        </li>
+                        <li id="users">
+                        @if(auth()->user()->is_admin === 'admin')
+                                <a class="has-arrow" href="{{url('/manage')}}">
+                                    <span class="fa fa-fw fa-github fa-lg"></span><br />
+                                    <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">8</span>
+                                    Users
+                                </a>
+                        @endif
                     </ul>
                 </nav>
             </div>
@@ -255,4 +255,50 @@
 </div>
 </body>
 </html>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+    var loc = window.location.pathname;
+    switch(loc) {
+        case '/urgent':
+            $('#urgent').addClass('mm-active');
+            $('#accidents').removeClass('mm-active');
+            $('#fire').removeClass('mm-active');
+            $('#abuse').removeClass('mm-active');
+            $('#user').removeClass('mm-active');
+            break;
+        case '/accidents':
+            $('#accidents').addClass('mm-active');
+            $('#urgent').removeClass('mm-active');
+            $('#fire').removeClass('mm-active');
+            $('#abuse').removeClass('mm-active');
+            $('#user').removeClass('mm-active');
+            break;
+        case '/fire':
+            $('#fire').addClass('mm-active');
+            $('#accidents').removeClass('mm-active');
+            $('#urgent').removeClass('mm-active');
+            $('#abuse').removeClass('mm-active');
+            $('#user').removeClass('mm-active');
+            break;
+        case '/abuse':
+            $('#abuse').addClass('mm-active');
+            $('#accidents').removeClass('mm-active');
+            $('#fire').removeClass('mm-active');
+            $('#urgent').removeClass('mm-active');
+            $('#user').removeClass('mm-active');
+            break;
+        case '/manage':
+            $('#users').addClass('mm-active');
+            $('#abuse').removeClass('mm-active');
+            $('#accidents').removeClass('mm-active');
+            $('#fire').removeClass('mm-active');
+            $('#urgent').removeClass('mm-active');
+            break;
+    }
+    });
+</script>
 @stack('scripts')

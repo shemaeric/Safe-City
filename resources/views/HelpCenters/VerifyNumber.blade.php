@@ -62,9 +62,17 @@
                                 </div>
 
                             @endif
-                            @if (session('message'))
+                            @if (session('message_login'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    {{ session('message') }}
+                                    {{ session('message_login') }} Click here to <a href="/login">Login</a>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    </button>
+                                </div>
+
+                            @endif
+                            @if (session('message_verify'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('message_verify') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     </button>
                                 </div>
