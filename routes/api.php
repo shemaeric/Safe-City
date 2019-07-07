@@ -33,5 +33,5 @@ use App\help_seekers;
 //Route::delete('users/{id}', 'UsersController@destroy');
 
 Route::post('help_seekers/register', 'RegisterHelpSeekerController@register');
-Route::post('/login','RegisterHelpSeekerController@login');
 Route::post('/verify','RegisterHelpSeekerController@verify');
+Route::post('/emergency', 'EmergenciesController@shortestCenter');

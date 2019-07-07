@@ -26,12 +26,13 @@ class VerifyController extends Controller
            $user->save();
            $message = '';
            if($user->is_admin === 'admin'){
-               $message = 'Verified successfully<a href="/login">Click to login</a>';
+               $message_login = 'Verified successfully';
+               return redirect()->back()->with(['message_login'=>$message_login]);
            }
            if($user->is_admin !=='admin'){
-               $message = 'Verified successfully. Please wait for admin to approve you';
+               $message_verify = 'Verified successfully. Please wait for admin to approve you';
+               return redirect()->back()->with(['message_verify'=>$message_verify]);
            }
-           return redirect()->back()->with(['message'=>$message]);
        }
        else{
            return redirect()->back()->with(['warning'=>'Something went wrong!']);

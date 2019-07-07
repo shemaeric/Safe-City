@@ -14,7 +14,7 @@ class CreateEmergencyTable extends Migration
     public function up()
     {
         Schema::create('emergency_table', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('help_center_id');
             $table->foreign('help_center_id')
                 ->references('id')

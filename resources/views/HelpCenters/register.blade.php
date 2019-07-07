@@ -25,12 +25,13 @@
   <body class="">
     <div class="page">
       <div class="page-main">
-        <div class="header">
+        <div class="header border-bottom" style="background-color: #014461">
           <div class="container">
             <div class="d-flex">
-              <a class="navbar-brand" href="./index.html">
+              <a class="navbar-brand mr-auto text-light" href="./index.html">
                 Safe City
               </a>
+              <a href="{{url('/login')}}" class="btn btn-sm my-1 btn-white" data-toggle="tooltip" title="Login if you have account!">Login</a><
             </div>
           </div>
         </div>
@@ -45,7 +46,8 @@
               <form class="card" action="{{url('/signup')}}" method="POST">
                 @csrf
                 <div class="card-header">
-                  <h3 class="card-title m-auto"> <span style="font-weight: 600;">Sign Up</span> <span style="margin-left:10px;margin-right:10px;">|</span> <a href="{{url('/login')}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Login if you have account!">Login</a></h3>
+                  <h3 class="card-title m-auto"> <span style="font-weight: 600;">Sign Up</span>
+                  </h3>
                 </div>
                 <div class="card-body p-6">
 
@@ -119,7 +121,7 @@
                   </div>
 
                   <div class="form-footer">
-                    <button type="submit" class="btn btn-primary btn-block">Create new account</button>
+                    <button type="submit" class="btn btn-block" style="background:#256589;color:#fff;">Create new account</button>
                   </div>
                 </div>
               </form>

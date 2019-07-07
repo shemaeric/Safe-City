@@ -13,11 +13,10 @@ class LoginController extends Controller
         return view('HelpCenters.login');
     }
     public function store(Request $request){
-        if (Auth::attempt(['email'=>$request->email,'password'=>$request->password,'active' =>1]) == false) {
+        if (Auth::attempt(['email'=>$request->email,'password'=>$request->password,'active' =>1,'is_blocked' =>0]) == false) {
             return redirect()->back()->with('warning','The email or password is incorrect, please try again');
         }
-
-        return redirect('/home');
+        return redirect('/urgent');
 
     }
     public function logout(){

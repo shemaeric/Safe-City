@@ -39,12 +39,13 @@
   <body class="">
     <div class="page">
       <div class="page-main">
-        <div class="header">
+        <div class="header border-bottom" style="background-color: #014461">
           <div class="container">
             <div class="d-flex">
-              <a class="navbar-brand" href="./index.html">
+              <a class="navbar-brand mr-auto text-light" href="./index.html">
                 Safe City
               </a>
+              <a href="{{url('/')}}" class="btn btn-sm my-1 btn-white" data-toggle="tooltip" title="Don't have account signup!">Sign Up</a>
             </div>
           </div>
         </div>
@@ -59,7 +60,7 @@
               <form class="card" action="{{url('login-user')}}" method="POST">
                 @csrf
                 <div class="card-header">
-                  <h3 class="card-title m-auto"><span style="font-weight: 600"> Login</span> <span style="margin-left:10px;margin-right:10px;">|</span> <a href="{{url('/')}}" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Don't have account signup!">Sign Up</a></h3>
+                  <h3 class="card-title m-auto"><span style="font-weight: 600"> Login</span></h3>
                 </div>
                 <div class="card-body p-6">
                   @if (session('warning'))
@@ -80,7 +81,7 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
                   </div>
                   <div class="form-footer">
-                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-block" style="background:#256589;color:#fff;">Sign in</button>
                   </div>
                 </div>
               </form>
