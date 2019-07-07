@@ -16,7 +16,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2018-04-04 18:58:30 +0200 -->
-    <title>Login - Safe City</title>
+    <title>@yield('title')- Safe City</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="{{asset('assets/js/require.min.js')}}"></script>
@@ -26,8 +26,8 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="./assets/css/dashboard.css" rel="stylesheet" />
-    <script src="./assets/js/dashboard.js"></script>
+    <link href="{{asset('assets/css/dashboard.css')}}" rel="stylesheet" />
+    <script src="{{asset('assets/js/dashboard.js')}}"></script>
     <style type="text/css">
         ul li{
             display: block;
@@ -106,13 +106,13 @@
         }
     </style>
 </head>
-<body class="">
+<body class="" style="overflow-x: hidden">
 <div class="page">
     <div class="page-main">
         <div class="header">
             <div class="container-fluid">
                 <div class="d-flex">
-                    <a class="navbar-brand" href="./index.html">
+                    <a class="navbar-brand" href="javascript::Void()">
                         Safe City
                     </a>
                     <div class="ml-auto d-flex order-lg-2">
@@ -126,37 +126,7 @@
                         <!--delectus dolore dolores maxime nesciunt qui quia totam.-->
                         <!--</div>-->
                         <!--</div>-->
-                        <div class="dropdown d-none d-md-flex">
-                            <a class="nav-link icon" data-toggle="dropdown">
-                                <i class="fe fe-bell"></i>
-                                <span class="nav-unread"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a href="#" class="dropdown-item d-flex">
-                                    <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
-                                    <div>
-                                        <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
-                                        <div class="small text-muted">10 minutes ago</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex">
-                                    <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
-                                    <div>
-                                        <strong>Alice</strong> started new task: Tabler UI design.
-                                        <div class="small text-muted">1 hour ago</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex">
-                                    <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
-                                    <div>
-                                        <strong>Rose</strong> deployed new version of NodeJS REST Api V3
-                                        <div class="small text-muted">2 hours ago</div>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
-                            </div>
-                        </div>
+
                         <div class="dropdown">
                             <a href="#" class="nav-link pr-0" data-toggle="dropdown">
                                 <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
@@ -221,8 +191,8 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-11 col-md-7">
-                <div class="row" style="overflow-y: hidden;">
+            <div class="col-lg-11 col-md-7" style="">
+                <div class="row" style="overflow-y: hidden;overflow-x: hidden">
 
                     @yield('content')
 
@@ -233,21 +203,8 @@
     <footer class="footer">
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
-                <div class="col-auto ml-auto">
-                    <div class="row align-items-center">
-                        <div class="col-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./docs/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://github.com/tabler/tabler" class="btn btn-outline-primary btn-sm">Source code</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-                    Copyright &copy; 2019 <a href=".">Safe City</a>.
+                    Copyright &copy; 2019 <a href="javascript::Void()">Safe City</a>.
                 </div>
             </div>
         </div>

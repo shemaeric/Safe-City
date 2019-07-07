@@ -18,6 +18,8 @@ Route::post('/verify-account', 'VerifyController@postVerify')->name('postVerify'
 Route::get('/login','LoginController@show');
 Route::post('/login-user','LoginController@store');
 Route::get('/near','EmergenciesController@shortestCenter');
+
+
 Route::get('/see',function(){
    return view('helpSeeker');
 });
@@ -39,6 +41,8 @@ Route::group(['middleware' => ['isAuthorised']], function () {
     Route::get('/fire', 'EmergenciesController@showFire');
     Route::get('/abuse', 'EmergenciesController@showAbuse');
     Route::get('/logout','LoginController@logout');
+    Route::get('/details/{id}','EmergenciesController@details');
+    Route::get('/approve/{id}','EmergenciesController@approve');
 
 
 });

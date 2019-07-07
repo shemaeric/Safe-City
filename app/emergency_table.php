@@ -12,7 +12,7 @@ class emergency_table extends Model
     protected $table = 'emergency_table';
     public function users()
     {
-        return $this->belongsTo(User::class, 'help_seeker_id', 'id');
+        return $this->belongsTo(User::class, 'help_center_id', 'id');
     }
     public function help_seeker()
     {
