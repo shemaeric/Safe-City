@@ -66,12 +66,12 @@ class RegisterUser extends Controller
         }
         else{
            $code = rand(111,9999);
-//            $nexmo = app('Nexmo\Client');
-//            $nexmo->message()->send([
-//                'to' => '+250'.(int) $request->phone_number,
-//                'from' => 'Safe City',
-//                'text' =>  'Verify Code: '.$code,
-//            ]);
+            $nexmo = app('Nexmo\Client');
+            $nexmo->message()->send([
+                'to' => '+250'.(int) $request->phone_number,
+                'from' => 'Safe City',
+                'text' =>  'Verify Code: '.$code,
+            ]);
 //            dd($request->all());
             $user->name = $request->name;
             $user->email = $request->email;
