@@ -3,7 +3,7 @@
     <div class="col-lg-4 col-md-6 my-5">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Help Seeker Details  {{ - $details->emergency_title?$details->emergency_title:''}}</h3>
+                <h3 class="card-title">Help Seeker Details  {{  $details->emergency_title?$details->emergency_title:''}}</h3>
             </div>
             <div class="card-body" style="{{$details->attached_file}}">
                 <img src="{{$details->attached_file}}" class="img-responsive">
@@ -91,6 +91,5 @@
         </script>
     </div>
 @endsection
-//0787948480
 
 
