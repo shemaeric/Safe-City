@@ -44,6 +44,7 @@
             <div class="d-flex">
               <a class="navbar-brand mr-auto text-light" href="./index.html">
                 Emergency App
+                <img src="{{ Storage::disk('public')->url('2dPOAaArZJ.png')}}" alt="Logo" width="150px" height="75px">
               </a>
               <a href="{{url('/')}}" class="btn btn-sm my-1 btn-white" data-toggle="tooltip" title="Don't have account signup!">Sign Up</a>
             </div>

@@ -115,7 +115,7 @@
                     <a class="navbar-brand" href="javascript::Void()">
                         Emergency App
                     </a>
-                    <img src="{{ Storage::disk('public')->url('2dPOAaArZJ.png') }}" alt="Logo" width="150px" height="75px">
+
                     <div class="ml-auto d-flex order-lg-2">
 
                         <!--<div class="dropdown d-none d-md-flex">-->

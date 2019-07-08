@@ -34,5 +34,5 @@ use App\help_seekers;
 
 Route::post('help_seekers/register', 'RegisterHelpSeekerController@register');
 Route::post('/verify','RegisterHelpSeekerController@verify');
-Route::post('/emergency', 'EmergenciesController@translatepic');
+Route::post('/emergency', 'EmergenciesController@shortestCenter');
 //Route::post('/insert','EmergenciesController@translatepic');
