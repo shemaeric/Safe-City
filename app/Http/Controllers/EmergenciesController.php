@@ -31,12 +31,12 @@ class emergenciesController extends Controller
             $done = $approve->save();
             if ($done) {
 
-                //$nexmo = app('Nexmo\Client');
-//        $nexmo->message()->send([
-//            'to' => '+250'.(int) $approve->help_seeker->my_phone_number,
-//            'from' => $approve->users->name,
-//            'text' =>  'Soon we are reaching there.',
-//        ]);
+                $nexmo = app('Nexmo\Client');
+                $nexmo->message()->send([
+                    'to' => '+250'.(int) $approve->help_seeker->my_phone_number,
+                    'from' => $approve->users->name,
+                    'text' =>  'Soon we are reaching there.',
+                ]);
                 return redirect()->back()->with(['message' => 'Approved message sent to help seeker']);
 
             }
@@ -127,5 +127,12 @@ class emergenciesController extends Controller
                 return Response::json(['status' => 500, 'error' => 'Server error']);
             }
         }
+    }
+    public function showMe(Request $request){
+        $image = $request->attached_file;  // your base64 encoded
+        $image = str_replace('data:image/png;base64,', '', $image);
+        $image = str_replace(' ', '+', $image);
+        $imageName = rand(111,9999) . '.' . 'png';
+        \File::put(storage_path(). '/app/public' . $imageName, base64_decode($image));
     }
 }
