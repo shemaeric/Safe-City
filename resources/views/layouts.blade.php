@@ -113,8 +113,9 @@
             <div class="container-fluid">
                 <div class="d-flex">
                     <a class="navbar-brand" href="javascript::Void()">
-                        Safe City
+                        Emergency App
                     </a>
+                    <img src="{{ Storage::disk('public')->url('2dPOAaArZJ.png') }}" alt="Logo" width="150px" height="75px">
                     <div class="ml-auto d-flex order-lg-2">
 
                         <!--<div class="dropdown d-none d-md-flex">-->
@@ -155,28 +156,28 @@
                         <li id="urgent">
                             <a class="has-arrow" href="{{url('urgent')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span>
-                                <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">2</span></br>
+                                @yield('urgent') </br>
                                 Urgent
                             </a>
                         </li>
                         <li id="accidents">
                             <a class="has-arrow" href="{{url('accidents')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span>
-                                <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">2</span>
+                                @yield('accident')
                                 Accidents
                             </a>
                         </li>
                         <li id="fire">
                             <a class="has-arrow" href="{{url('/fire')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span><br />
-                                <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">5</span>
+                                @yield('fire')
                                 Fire
                             </a>
                         </li>
                         <li id="abuse">
                             <a class="has-arrow" href="{{url('abuse')}}">
                                 <span class="fa fa-fw fa-github fa-lg"></span><br />
-                                <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">2</span>
+                                @yield('abuse')
                                 Abuse
                             </a>
                         </li>
@@ -184,7 +185,7 @@
                         @if(auth()->user()->is_admin === 'admin')
                                 <a class="has-arrow" href="{{url('/manage')}}">
                                     <span class="fa fa-fw fa-github fa-lg"></span><br />
-                                    <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">8</span>
+                                    @yield('users')
                                     Users
                                 </a>
                         @endif

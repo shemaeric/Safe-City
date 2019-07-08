@@ -35,7 +35,7 @@
             <div class="container-fluid">
                 <div class="d-flex">
                     <a class="navbar-brand mr-auto text-light" href="./index.html">
-                        Safe City
+                        Emergency App
                     </a>
                 </div>
             </div>

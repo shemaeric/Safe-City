@@ -29,7 +29,7 @@
           <div class="container">
             <div class="d-flex">
               <a class="navbar-brand mr-auto text-light" href="./index.html">
-                Safe City
+                Emergency App
               </a>
               <a href="{{url('/login')}}" class="btn btn-sm my-1 btn-white" data-toggle="tooltip" title="Login if you have account!">Login</a><
             </div>

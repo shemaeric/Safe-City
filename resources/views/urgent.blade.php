@@ -41,6 +41,12 @@
                                 </thead>
                                 <tbody>
                                 @foreach($urgent as $index => $urgent)
+                                    @section('urgent')
+                                        <?php $i= 0; ?>
+                                        @if($urgent->approved != 1)
+                                            <span class="badge badge-danger" style="position: absolute;top:7px;right:29px;border-radius: 50%;">{{$i + 1}}</span>
+                                        @endif
+                                    @endsection
                                     <tr style =" background:{{$urgent->approved < 1 ?'rgba(255,153,102,0.2)':''}}">
                                         <td><span class="text-muted">{{$index + 1}}</span></td>
                                         <td><a href="invoice.html" class="text-inherit">{{$urgent->help_seeker->first_name}}</a></td>
