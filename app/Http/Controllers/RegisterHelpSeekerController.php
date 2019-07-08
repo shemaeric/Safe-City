@@ -36,12 +36,12 @@ class RegisterHelpSeekerController extends Controller
             'referee_phone_number' => $request->get('referee_phone_number'),
             'code' => $code,
         ]);
-        //$nexmo = app('Nexmo\Client');
-//        $nexmo->message()->send([
-//            'to' => '+250'.(int) $request->my_phone_number,
-//            'from' => 'Safe City',
-//            'text' =>  'Verify Code: '.$code,
-//        ]);
+        $nexmo = app('Nexmo\Client');
+        $nexmo->message()->send([
+            'to' => '+250'.(int) $request->my_phone_number,
+            'from' => 'Emergency App',
+            'text' =>  'Verify Code: '.$code,
+        ]);
         $user = $show::first();
         return Response::json(['status'=>201,'details'=>$user]);
     }

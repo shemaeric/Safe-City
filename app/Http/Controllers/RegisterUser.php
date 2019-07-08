@@ -40,13 +40,13 @@ class RegisterUser extends Controller
      */
     public function store(Request $request)
     {
-//        $code = rand(1111,9999);
-//        $nexmo = app('Nexmo\Client');
-//        $nexmo->message()->send([
-//            'to' => '+250'.(int) $request->phone_number,
-//            'from' => 'Safe City',
-//            'text' =>  'Verify Code: '.$code,
-//        ]);
+        $code = rand(1111,9999);
+        $nexmo = app('Nexmo\Client');
+        $nexmo->message()->send([
+            'to' => '+250'.(int) $request->phone_number,
+            'from' => 'Emergency App',
+            'text' =>  'Verify Code: '.$code,
+        ]);
         $adminExists = User::all();
         $user = new User();
         $validator = Validator::make($request->all(), [
